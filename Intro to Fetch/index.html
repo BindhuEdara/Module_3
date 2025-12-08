@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos — Fetch Example</title>
+    <style>
+      body {
+        font-family: system-ui, Arial;
+        padding: 20px;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      li {
+        margin: 8px 0;
+      }
+
+      .DelBtn {
+        margin-left: 12px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Intro to Fetch</h2>
+    <button id="displayBtn">Display Data</button>
+    <ul id="todoList"></ul>
+
+    <script>
+      document.getElementById('displayBtn').addEventListener('click', display);
+
+      function display() {
+        fetch("https://jsonplaceholder.typicode.com/todos", { method: "GET" })
+          .then((res) => res.json())
+          .then((data) => {
+            const first20 = data.slice(0, 20);
+            localStorage.setItem("todos", JSON.stringify(first20));
+            renderData(first20);
+          })
+          .catch((error) => console.log(error));
+      }
+
+      function renderData(data) {
+        const list = document.getElementById("todoList");
+        list.innerHTML = "";
+        console.log("rendering todos:", data);
+
+        data.forEach((el) => {
+          const li = document.createElement("li");
+          li.dataset.id = el.id; // store id on the li
+          li.textContent = `${el.title} — ${el.completed ? "done" : "pending"}`;
+
+          const delBtn = document.createElement("button");
+          delBtn.className = "DelBtn";
+          delBtn.textContent = "Delete";
+
+          delBtn.addEventListener("click", () => deleteTodo(el.id));
+
+          li.appendChild(delBtn);
+          list.appendChild(li);
+        });
+      }
+
+
+      function deleteTodo(id) {
+        // read todos from localStorage
+        const todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+        const updated = todos.filter((t) => t.id !== id);
+        localStorage.setItem("todos", JSON.stringify(updated));
+        const li = document.querySelector(`#todoList li[data-id="${id}"]`);
+        if (li) li.remove();
+
+      }
+
+    </script>
+  </body>
+
+</html>
