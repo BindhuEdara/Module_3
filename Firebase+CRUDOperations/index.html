@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Books CRUD — Firebase RTDB</title>
+  <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <div class="app">
+      <aside class="sidebar">
+        <h2>Add / Update Book</h2>
+
+        <div class="field">
+          <label class="muted-small">Title</label>
+          <input id="title" placeholder="Book title" />
+        </div>
+
+        <div class="field">
+          <label class="muted-small">Author</label>
+          <input id="author" placeholder="Author name" />
+        </div>
+
+        <div class="field">
+          <label class="muted-small">Price</label>
+          <input id="price" placeholder="e.g. 199.99" />
+        </div>
+
+        <div class="field">
+          <label class="muted-small">Cover Image URL</label>
+          <input id="imageUrl" placeholder="https://..." />
+        </div>
+
+        <div class="row">
+          <button id="saveBtn" class="btn primary">Add Book</button>
+          <button id="clearBtn" class="btn ghost">Clear</button>
+        </div>
+
+        <!-- <hr style="margin:12px 0" /> -->
+
+        <!-- <div class="row">
+          <button id="seedBtn" class="btn ghost">Seed sample data</button>
+          <button id="refreshBtn" class="btn ghost">Refresh list</button>
+        </div> -->
+<!--
+        <p class="muted-small" style="margin-top:12px">Realtime DB URL used:
+          <br><small id="dbUrl" class="muted-small"></small>
+        </p>
+        <p class="muted-small">Make sure your Realtime Database rules allow reads/writes while testing.</p> -->
+      </aside>
+
+      <main class="content">
+        <div class="toolbar">
+          <h2>Books</h2>
+          <div class="muted-small" id="status">Loading...</div>
+        </div>
+
+        <div id="grid" class="grid"></div>
+
+        <div id="empty" class="center muted-small" style="display:none; margin-top:14px">
+          No books yet — add one or click Seed sample data.
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="index.js"></script>
+  </body>
+
+</html>

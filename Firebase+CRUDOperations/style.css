@@ -1,0 +1,179 @@
+  <style>
+      :root {
+        --gap: 16px;
+        --card-bg: #fff;
+        --accent: #0dcaf0;
+        --muted: #556;
+        --radius: 10px;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, Arial, sans-serif;
+        background: #f3f6f8;
+        color: #111;
+      }
+
+      .app {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: var(--gap);
+        padding: 18px;
+        max-width: 1200px;
+        margin: 18px auto;
+      }
+
+      /* Sidebar / form */
+      .sidebar {
+        background: linear-gradient(180deg, #ffffff, #fbfdff);
+        padding: 16px;
+        border-radius: var(--radius);
+        box-shadow: 0 6px 18px rgba(20, 30, 50, 0.06);
+      }
+
+      .sidebar h2 {
+        margin: 0 0 12px 0;
+        font-size: 18px
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .field input {
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #dbe6ef;
+        font-size: 14px
+      }
+
+      .row {
+        display: flex;
+        gap: 8px
+      }
+
+      .btn {
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        background: transparent
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #022;
+        font-weight: 700
+      }
+
+      .btn.ghost {
+        background: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        color: var(--muted)
+      }
+
+      /* Grid of cards */
+      .content {}
+
+      .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 12px;
+        box-shadow: 0 6px 18px rgba(20, 30, 50, 0.04);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 8px
+      }
+
+      .card h3 {
+        margin: 0;
+        font-size: 16px
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 14px
+      }
+
+      .card .price {
+        font-weight: 700;
+        color: #0a6;
+      }
+
+      .card .actions {
+        display: flex;
+        gap: 8px;
+        margin-top: auto
+      }
+
+      .card button {
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer
+      }
+
+      .card button.edit {
+        background: #ffd;
+        border: 1px solid #ffb;
+      }
+
+      .card button.del {
+        background: #ffdede;
+        border: 1px solid #f5a;
+      }
+
+      /* Responsive */
+      @media (max-width:980px) {
+        .app {
+          grid-template-columns: 1fr;
+          padding: 12px
+        }
+
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width:560px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .card img {
+          height: 200px
+        }
+      }
+
+      .muted-small {
+        color: var(--muted);
+        font-size: 13px
+      }
+
+      .center {
+        text-align: center
+      }
+    </style>
