@@ -1,6 +1,6 @@
 /* ====== CONFIG: replace with your RTDB base URL (no trailing slash) ====== */
 const BASE_URL =
-  "https://time-tracking-app-f8b16-default-rtdb.asia-southeast1.firebasedatabase.app";
+  "https://bookmanagement-353d9-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
 // DOM
 const titleEl = document.getElementById("title");
