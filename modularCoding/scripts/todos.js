@@ -7,10 +7,11 @@ document.getElementById("navbar").innerHTML = Navbar();
 document.getElementById("footer").innerHTML = Footer();
 
 // Check login
-if (localStorage.getItem("isLoggedIn") !== "true") {
+if (!localStorage.getItem("isLoggedIn")) {
   alert("Please login first");
   window.location.href = "login.html";
 }
+
 
 async function loadTodos() {
   try {

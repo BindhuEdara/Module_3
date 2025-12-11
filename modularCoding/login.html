@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
+    <div class="page-wrapper">
     <div id="navbar"></div>
-
+    <main class="content">
     <h2>Login</h2>
+    <div class="loginDetails">
     <input id="name" placeholder="Name" /><br><br>
     <input id="email" placeholder="Email" /><br><br>
     <input id="password" type="password" placeholder="Password" /><br><br>
     <button id="loginBtn" onclick="loginUser()">Login</button>
-
+    </div>
+    </main>
     <div id="footer"></div>
-
+    </div>
     <script type="module" src="./scripts/login.js"></script>
 </body>
 </html>

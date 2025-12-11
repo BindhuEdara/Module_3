@@ -1,0 +1,42 @@
+body, html{
+  height: 100%;
+  margin: 0;
+}
+.page-wrapper{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.content{
+  flex: 1;
+}
+h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.signupDetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  gap: 20px;
+}
+.loginDetails{
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+#name{
+  padding: 4px;
+}
+#email{
+  padding: 4px;
+}
+#password{
+  padding: 4px;
+}
